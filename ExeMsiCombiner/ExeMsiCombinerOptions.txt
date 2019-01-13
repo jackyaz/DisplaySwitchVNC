@@ -1,0 +1,13 @@
+ExeMsiCombiner Options File, Ver. 1.0.0.0
+inputExeFile=D:\Docs\Prog\cpp\ExeMsiCombiner\ExeMsiCombiner\Setup\Release\Setup.exe
+inputMsiFile=D:\Docs\Prog\cpp\ExeMsiCombiner\ExeMsiCombiner\Setup\Release\Setup.msi
+inputIcoFile=D:\Docs\Prog\cpp\ExeMsiCombiner\ExeMsiCombiner\ExeMsiCombiner\Content\App.ico
+outputExeFile=D:\Docs\Prog\cpp\ExeMsiCombiner\ExeMsiCombiner\Setup\Release\ExeMsiCombinerInstaller.exe
+useVersionInfo=1
+productVersion=1.0.0.1
+fileVersion=1.0.0.1
+companyName=Team E-P
+productName=ExeMsiCombiner (Setup/Installer)
+legalCopyright=©Team E-P, 2010
+commandLineArgs=
+compress=1

@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{09661F99-178C-4B32-A35C-72E85148A9E1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExeMsiCombiner</RootNamespace>
+    <AssemblyName>ExeMsiCombiner</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ManifestCertificateThumbprint>C3DCFEB6BBD8F7E4C1604ED91D9FB1D2B4679852</ManifestCertificateThumbprint>
+    <ManifestKeyFile>ExeMsiCombiner_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>c:\temp\publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <StartupObject>
+    </StartupObject>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InfoBox.designer.cs">
+      <DependentUpon>InfoBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Options.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InfoBox.resx">
+      <DependentUpon>InfoBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Resources\IExpressTemplate.SED" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ResourceLib\Accelerator.cs" />
+    <Compile Include="ResourceLib\AcceleratorResource.cs" />
+    <Compile Include="ResourceLib\BitmapFile.cs" />
+    <Compile Include="ResourceLib\BitmapResource.cs" />
+    <Compile Include="ResourceLib\CursorDirectoryResource.cs" />
+    <Compile Include="ResourceLib\CursorResource.cs" />
+    <Compile Include="ResourceLib\DeviceIndependentBitmap.cs" />
+    <Compile Include="ResourceLib\DialogExTemplate.cs" />
+    <Compile Include="ResourceLib\DialogExTemplateControl.cs" />
+    <Compile Include="ResourceLib\DialogResource.cs" />
+    <Compile Include="ResourceLib\DialogTemplate.cs" />
+    <Compile Include="ResourceLib\DialogTemplateBase.cs" />
+    <Compile Include="ResourceLib\DialogTemplateControl.cs" />
+    <Compile Include="ResourceLib\DialogTemplateControlBase.cs" />
+    <Compile Include="ResourceLib\DialogTemplateUtil.cs" />
+    <Compile Include="ResourceLib\DirectoryResource.cs" />
+    <Compile Include="ResourceLib\FixedFileInfo.cs" />
+    <Compile Include="ResourceLib\FontDirectoryEntry.cs" />
+    <Compile Include="ResourceLib\FontDirectoryResource.cs" />
+    <Compile Include="ResourceLib\FontResource.cs" />
+    <Compile Include="ResourceLib\Gdi32.cs" />
+    <Compile Include="ResourceLib\GenericResource.cs" />
+    <Compile Include="ResourceLib\IconDirectoryResource.cs" />
+    <Compile Include="ResourceLib\IconFile.cs" />
+    <Compile Include="ResourceLib\IconFileIcon.cs" />
+    <Compile Include="ResourceLib\IconImageResource.cs" />
+    <Compile Include="ResourceLib\IconResource.cs" />
+    <Compile Include="ResourceLib\Kernel32.cs" />
+    <Compile Include="ResourceLib\ManifestResource.cs" />
+    <Compile Include="ResourceLib\MenuExTemplate.cs" />
+    <Compile Include="ResourceLib\MenuExTemplateItem.cs" />
+    <Compile Include="ResourceLib\MenuExTemplateItemCollection.cs" />
+    <Compile Include="ResourceLib\MenuExTemplateItemCommand.cs" />
+    <Compile Include="ResourceLib\MenuExTemplateItemPopup.cs" />
+    <Compile Include="ResourceLib\MenuResource.cs" />
+    <Compile Include="ResourceLib\MenuTemplate.cs" />
+    <Compile Include="ResourceLib\MenuTemplateBase.cs" />
+    <Compile Include="ResourceLib\MenuTemplateItem.cs" />
+    <Compile Include="ResourceLib\MenuTemplateItemCollection.cs" />
+    <Compile Include="ResourceLib\MenuTemplateItemCommand.cs" />
+    <Compile Include="ResourceLib\MenuTemplateItemPopup.cs" />
+    <Compile Include="ResourceLib\Resource.cs" />
+    <Compile Include="ResourceLib\ResourceId.cs" />
+    <Compile Include="ResourceLib\ResourceInfo.cs" />
+    <Compile Include="ResourceLib\ResourceTableHeader.cs" />
+    <Compile Include="ResourceLib\ResourceUtil.cs" />
+    <Compile Include="ResourceLib\StringFileInfo.cs" />
+    <Compile Include="ResourceLib\StringResource.cs" />
+    <Compile Include="ResourceLib\StringTable.cs" />
+    <Compile Include="ResourceLib\StringTableEntry.cs" />
+    <Compile Include="ResourceLib\User32.cs" />
+    <Compile Include="ResourceLib\VarFileInfo.cs" />
+    <Compile Include="ResourceLib\VarTable.cs" />
+    <Compile Include="ResourceLib\VersionResource.cs" />
+    <Compile Include="ResourceLib\Winver.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IExpressTemplateMsiOnly.SED" />
+    <None Include="Resources\ExeMsiLauncher.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\app.manifest" />
+    <None Include="Content\readme.mht">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\ExeMsiExtractor.exe" />
+    <None Include="Content\Uninstall.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Content Include="Content\App.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Uninstall.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
