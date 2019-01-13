@@ -1,5 +1,5 @@
 # DisplaySwitchVNC
-A helper application to make life easier from a single screen RealVNC VNC Viewer computer, to a multi screen RealVNC VNC Server.
+A helper application to make life easier when connecting from a single screen RealVNC VNC Viewer computer to a multi screen RealVNC VNC Server.
 
 ### ExeMsiCombiner
 This tool/code was sourced from http://epav.co.uk/giles/
