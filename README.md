@@ -1,5 +1,16 @@
 # DisplaySwitchVNC
-A helper application to make life easier when connecting from a single screen RealVNC VNC Viewer computer to a multi screen RealVNC VNC Server.
+A helper application to make life easier when connecting from a single screen VNC Viewer computer to a multi-monitor VNC Server. This was developed for use with VNC Connect by RealVNC.
+
+## How do I download it?
+Downloads for DisplaySwitch VNC are found under [Release](https://github.com/jackyaz/DisplaySwitchVNC/releases)
+
+## How do I use it?
+DisplaySwitchVNC will run automatically on startup, in the background. It will appear automatically when you connect using VNC Viewer. You can view the User Application at any time, either via the desktop shortcut, or double clicking the system tray icon.
+
+## Which versions and operating systems are supported?
+This application only needs to be installed on the device running VNC Server - any VNC Viewer (RealVNC) can be used.
+VNC Server - this has been tested on VNC Server (RealVNC) on version 6.2.0 and above
+Operating system - this was developed and tested on Windows 10, but should run on the Windows versions supported by VNC Connect (Windows 7 and later)
 
 ## What does it do?
 This application was created out of the need to view a single monitor at a time when connecting to my gaming desktop with VNC Connect. My gaming desktop has 3 monitors attached (was 4!), and I would often remotely connect to it using VNC Viewer from my Android phone. The current (as at 2019-01-16) version of VNC Connect does not feature the ability to easily switch between monitors.
