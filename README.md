@@ -8,8 +8,8 @@ Downloads for DisplaySwitch VNC are found under [Releases](https://github.com/ja
 DisplaySwitchVNC will run automatically on startup, in the background. It will appear automatically when you connect using VNC Viewer. You can view the User Application at any time, either via the desktop shortcut, or double clicking the system tray icon.
 
 ## Which versions and operating systems are supported?
-This application only needs to be installed on the device running VNC Server - any VNC Viewer (RealVNC) can be used.
-VNC Server - this has been tested on VNC Server (RealVNC) on version 6.2.0 and above
+This application only needs to be installed on the device running VNC Server - any [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/) (RealVNC) can be used.
+[VNC Server](https://www.realvnc.com/en/connect/download/vnc/windows/) - this has been tested on VNC Server (RealVNC) on version 6.2.0 and above
 Operating system - this was developed and tested on Windows 10, but should run on the Windows versions supported by VNC Connect (Windows 7 and later)
 
 ## What does it do?
