@@ -38,7 +38,6 @@ namespace DisplaySwitch_Service_VNC
             tmrCheckDisplayDevice = new System.Timers.Timer(100);
             tmrCheckDisplayDevice.Elapsed += new ElapsedEventHandler(tmrCheckDisplayDevice_Tick);
             tmrCheckDisplayDevice.AutoReset = true;
-            tmrCheckDisplayDevice.Enabled = true;
 
             //When service starts, default to last recorded Primary display (this will usually be on system start)
             RegistryManagement.SetRegistryValue(RegHives.HKLM, "DisplayDevice", RegistryManagement.GetRegistryValue(RegHives.HKLM_DS, "PrimaryMonitor"));
