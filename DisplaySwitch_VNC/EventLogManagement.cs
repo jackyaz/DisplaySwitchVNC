@@ -18,13 +18,20 @@ namespace DisplaySwitch_VNC
         {
             List<EventLogEntry> list = new List<EventLogEntry>();
 
-            //Retrieve all events of source VNC Server, and iterate to add to a list
+            //Retrieve all events of source VNC Server, or EventID 1410 and Warning, and iterate to add to a list
             EventLog evlg = new EventLog("Application", ".", "VNC Server");
             EventLogEntryCollection col = evlg.Entries;
             foreach (EventLogEntry ev in col)
             {
                 if (ev.Source == "VNC Server") { list.Add(ev); }
+                #pragma warning disable 0618
+                if (ev.EventID == 1410 && ev.EntryType == EventLogEntryType.Warning) { list.Add(ev); }
+                #pragma warning restore 0618
             }
+
+            //Find the last entry recorded for a VNC authentication event - note we use authenticated rather than connected
+            //since a connection does not necessarily indicate the user authenticated to use VNC Server
+            int indexlastshutdown = list.FindLastIndex(x => x.Message.StartsWith("Computer shutdown detected"));
 
             //Find the last entry recorded for a VNC authentication event - note we use authenticated rather than connected
             //since a connection does not necessarily indicate the user authenticated to use VNC Server
@@ -34,7 +41,8 @@ namespace DisplaySwitch_VNC
             int indexlastconn = list.FindLastIndex(x => x.Message.StartsWith("Connections: disconnected:"));
 
             //If authentication is greater than disconnection, assume a user is currently connected
-            if (indexlastauth > indexlastconn) { return true; }
+            if (indexlastshutdown > indexlastauth) { return true; }
+            else if (indexlastauth > indexlastconn) { return true; }
             else { return false; }
         }
 

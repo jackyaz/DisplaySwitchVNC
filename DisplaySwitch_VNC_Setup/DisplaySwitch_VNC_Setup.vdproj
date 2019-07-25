@@ -329,15 +329,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:DisplaySwitch for RealVNC"
-        "ProductCode" = "8:{F71EBA05-CC7A-4C75-B80E-B8C99A8B7C2D}"
-        "PackageCode" = "8:{6F102C89-9A53-4B9C-8C91-00268D21E39D}"
+        "ProductCode" = "8:{BF834350-5498-4E0F-B022-720C3974D361}"
+        "PackageCode" = "8:{81AD6890-EBC3-4D8D-9F58-7A5710EA9C87}"
         "UpgradeCode" = "8:{2A35022A-AEF7-4646-9B81-09E77C399848}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:6.0.0"
+        "ProductVersion" = "8:6.0.1"
         "Manufacturer" = "8:Jack Naisbett"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -353,7 +353,7 @@
         "UseSystemSearchPath" = "11:TRUE"
         "TargetPlatform" = "3:0"
         "PreBuildEvent" = "8:"
-        "PostBuildEvent" = "8:cscript.exe \"$(ProjectDir)AddStartExeToMSI.js\" \"$(BuiltOuputPath)\"\r\n\"$(ProjectDir)..\\ExeMsiCombiner\\bin\\$(Configuration)\\ExeMsiCombiner.exe\" \"productVersion=6.0.0.0;fileVersion=6.0.0.0;inputExeFile=$(ProjectDir)$(Configuration)\\setup.exe;inputMsiFile=$(ProjectDir)$(Configuration)\\DisplaySwitch.msi;inputIcoFile=$(ProjectDir)icon.ico;useVersionInfo=1;companyName=Jack Naisbett;productName=DisplaySwitch for RealVNC Server;legalCopyright=©Jack Naisbett, 2018;compress=0;outputExeFile=$(ProjectDir)$(Configuration)\\DisplaySwitch_Setup.exe;\"\r\ndel setup.exe\r\ndel DisplaySwitch.msi"
+        "PostBuildEvent" = "8:cscript.exe \"$(ProjectDir)AddStartExeToMSI.js\" \"$(BuiltOuputPath)\"\r\n\"$(ProjectDir)..\\ExeMsiCombiner\\bin\\$(Configuration)\\ExeMsiCombiner.exe\" \"productVersion=6.0.1.0;fileVersion=6.0.1.0;inputExeFile=$(ProjectDir)$(Configuration)\\setup.exe;inputMsiFile=$(ProjectDir)$(Configuration)\\DisplaySwitch.msi;inputIcoFile=$(ProjectDir)icon.ico;useVersionInfo=1;companyName=Jack Naisbett;productName=DisplaySwitch for RealVNC Server;legalCopyright=©Jack Naisbett, 2019;compress=0;outputExeFile=$(ProjectDir)$(Configuration)\\DisplaySwitch_Setup.exe;\"\r\ndel setup.exe\r\ndel DisplaySwitch.msi"
         "RunPostBuildEvent" = "3:0"
         }
         "Registry"
@@ -808,7 +808,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_642C93A4D0B14FA5A6E902D7380725A5"
             {
-            "SourcePath" = "8:"
+            "SourcePath" = "8:..\\DisplaySwitch_Service_VNC\\obj\\Release\\DisplaySwitch_Service.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4618064CA3F445088815D2CA8E5AD8EE"

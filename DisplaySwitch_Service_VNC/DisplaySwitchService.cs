@@ -60,6 +60,7 @@ namespace DisplaySwitch_Service_VNC
         {
             tmrCheckDisplayDevice.Stop();
             RegistryManagement.SetRegistryValue(RegHives.HKLM, "DisplayDevice", RegistryManagement.GetRegistryValue(RegHives.HKLM_DS, "PrimaryMonitor"));
+            EventLogManagement.WriteEvent();
         }
 
         /// <summary>
