@@ -41,6 +41,7 @@ namespace DisplaySwitch_Service_VNC
 
             //When service starts, default to last recorded Primary display (this will usually be on system start)
             RegistryManagement.SetRegistryValue(RegHives.HKLM, "DisplayDevice", RegistryManagement.GetRegistryValue(RegHives.HKLM_DS, "PrimaryMonitor"));
+            if (!tmrCheckDisplayDevice.Enabled) { tmrCheckDisplayDevice.Start(); };
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace DisplaySwitch_Service_VNC
                 //When user logs on, set VNC Server to use user's selected screen
                 case SessionChangeReason.SessionLogon:
                     RegistryManagement.SetRegistryValue(RegHives.HKLM, "DisplayDevice", RegistryManagement.GetRegistryValue(RegHives.HKCU, "DisplayDevice"));
-                    tmrCheckDisplayDevice.Start();
+                    if (!tmrCheckDisplayDevice.Enabled) { tmrCheckDisplayDevice.Start(); };
                     break;
 
                 //When user logs off, set VNC Server to primary screen (to see login screen)
@@ -94,7 +95,7 @@ namespace DisplaySwitch_Service_VNC
                 //When user unlocks their session, set VNC Server to use user's selected screen
                 case SessionChangeReason.SessionUnlock:
                     RegistryManagement.SetRegistryValue(RegHives.HKLM, "DisplayDevice", RegistryManagement.GetRegistryValue(RegHives.HKCU, "DisplayDevice"));
-                    tmrCheckDisplayDevice.Start();
+                    if (!tmrCheckDisplayDevice.Enabled) { tmrCheckDisplayDevice.Start(); };
                     break;
             }
         }
