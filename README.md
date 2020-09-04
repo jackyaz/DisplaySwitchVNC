@@ -1,6 +1,8 @@
 # DisplaySwitchVNC
 A helper application to make life easier when connecting from a single monitor VNC Viewer computer to a multi monitor VNC Server. This was developed for use with [VNC Connect](https://www.realvnc.com/en/connect/) by RealVNC.
 
+This is an unofficial application and is not developed or supported by RealVNC.
+
 ## How do I download it?
 Downloads for DisplaySwitchVNC are found under [Releases](https://github.com/jackyaz/DisplaySwitchVNC/releases)
 
