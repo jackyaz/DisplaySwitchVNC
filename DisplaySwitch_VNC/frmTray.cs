@@ -71,7 +71,7 @@ namespace DisplaySwitch_VNC
         /// </summary>
         private void evtlgAuthenticated_EntryWritten(object sender, System.Diagnostics.EntryWrittenEventArgs e)
         {
-            //If log entry is a VNC authentication, show frmSwitchUI and blcoking closure - collapsable only
+            //If log entry is a VNC authentication, show frmSwitchUI and block closure - collapsable only
             if (EventLogManagement.MonitorAuths(e)) { ShowSwitchUI(false); }
         }
 
