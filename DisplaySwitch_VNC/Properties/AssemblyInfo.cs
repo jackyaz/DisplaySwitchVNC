@@ -11,7 +11,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("DisplaySwitch for RealVNC Server")]
-[assembly: AssemblyCopyright("Copyright © 2019")]
+[assembly: AssemblyCopyright("Copyright © 2021")]
 [assembly: AssemblyTrademark("")]
 
 
@@ -33,7 +33,7 @@ using System.Resources;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("6.0.3.0")]
-[assembly: AssemblyFileVersion("6.0.3.0")]
+[assembly: AssemblyVersion("6.0.4.0")]
+[assembly: AssemblyFileVersion("6.0.4.0")]
 [assembly: NeutralResourcesLanguage("en-GB")]
 
