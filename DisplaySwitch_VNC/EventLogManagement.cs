@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DisplaySwitch_VNC
 {
@@ -29,20 +30,22 @@ namespace DisplaySwitch_VNC
                 #pragma warning restore 0618
             }
 
-            //Find the last entry recorded for a VNC authentication event - note we use authenticated rather than connected
-            //since a connection does not necessarily indicate the user authenticated to use VNC Server
-            int indexlastshutdown = list.FindLastIndex(x => x.Message.StartsWith("Computer shutdown detected"));
+            list = list.OrderByDescending(o => o.TimeGenerated.Ticks).ToList();
 
             //Find the last entry recorded for a VNC authentication event - note we use authenticated rather than connected
             //since a connection does not necessarily indicate the user authenticated to use VNC Server
-            int indexlastauth = list.FindLastIndex(x => x.Message.StartsWith("Connections: authenticated:"));
+            int indexlastshutdown = list.FindIndex(x => x.Message.Contains("Computer shutdown detected"));
+
+            //Find the last entry recorded for a VNC authentication event - note we use authenticated rather than connected
+            //since a connection does not necessarily indicate the user authenticated to use VNC Server
+            int indexlastauth = list.FindIndex(x => x.Message.StartsWith("Connections: authenticated:"));
 
             //Find the last entry recorded for a VNC disconnection event
-            int indexlastconn = list.FindLastIndex(x => x.Message.StartsWith("Connections: disconnected:"));
+            int indexlastconn = list.FindIndex(x => x.Message.StartsWith("Connections: disconnected:"));
 
             //If authentication is greater than disconnection, assume a user is currently connected
-            if (indexlastshutdown > indexlastauth) { return true; }
-            else if (indexlastauth > indexlastconn) { return true; }
+            if (indexlastshutdown < indexlastauth && indexlastauth < indexlastconn) { return true; }
+            else if (indexlastauth < indexlastconn) { return true; }
             else { return false; }
         }
 

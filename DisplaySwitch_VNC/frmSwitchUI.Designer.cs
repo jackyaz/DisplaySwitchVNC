@@ -38,6 +38,8 @@
             this.pnlMin = new System.Windows.Forms.Panel();
             this.btnShow = new System.Windows.Forms.Button();
             this.tmrCheckReg = new System.Windows.Forms.Timer(this.components);
+            this.tmrCheckVNCConnection = new System.Windows.Forms.Timer(this.components);
+            this.bgwIsVNCConnected = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.evtlogDisconnected)).BeginInit();
             this.pnlMain.SuspendLayout();
             this.pnlMin.SuspendLayout();
@@ -131,6 +133,18 @@
             this.tmrCheckReg.Enabled = true;
             this.tmrCheckReg.Tick += new System.EventHandler(this.tmrCheckReg_Tick);
             // 
+            // tmrCheckVNCConnection
+            // 
+            this.tmrCheckVNCConnection.Enabled = true;
+            this.tmrCheckVNCConnection.Interval = 500;
+            this.tmrCheckVNCConnection.Tick += new System.EventHandler(this.tmrCheckVNCConnection_Tick);
+            // 
+            // bgwIsVNCConnected
+            // 
+            this.bgwIsVNCConnected.WorkerSupportsCancellation = true;
+            this.bgwIsVNCConnected.DoWork += new System.ComponentModel.DoWorkEventHandler(this.bgwIsVNCConnected_DoWork);
+            this.bgwIsVNCConnected.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.bgwIsVNCConnected_RunWorkerCompleted);
+            // 
             // frmSwitchUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -171,6 +185,8 @@
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.Timer tmrCheckReg;
         private System.Windows.Forms.ComboBox cmbDisplaySelector;
+        private System.Windows.Forms.Timer tmrCheckVNCConnection;
+        private System.ComponentModel.BackgroundWorker bgwIsVNCConnected;
     }
 }
 

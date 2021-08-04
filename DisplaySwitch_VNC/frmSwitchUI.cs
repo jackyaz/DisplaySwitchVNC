@@ -119,7 +119,7 @@ namespace DisplaySwitch_VNC
         /// </summary>
         private void eventLog1_EntryWritten(object sender, System.Diagnostics.EntryWrittenEventArgs e)
         {
-            if (EventLogManagement.MonitorDisconnects(e)) { allowclose = true; this.Close(); }
+            if (EventLogManagement.MonitorDisconnects(e)) { bgwIsVNCConnected.CancelAsync(); allowclose = true; this.Close(); }
         }
 
         #endregion
@@ -150,5 +150,37 @@ namespace DisplaySwitch_VNC
         #endregion
 
         #endregion
+
+        private void tmrCheckVNCConnection_Tick(object sender, EventArgs e)
+        {
+            if (!bgwIsVNCConnected.IsBusy)
+            {
+                bgwIsVNCConnected.RunWorkerAsync();
+            }
+        }
+
+        private void bgwIsVNCConnected_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            if (EventLogManagement.IsVNCConnected())
+            {
+                e.Result = true;
+            }
+            else if (!EventLogManagement.IsVNCConnected() && !allowclose)
+            {
+                e.Result = false;
+            }
+            else
+            {
+                e.Result = true;
+            }
+        }
+
+        private void bgwIsVNCConnected_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
+        {
+            if (!Convert.ToBoolean(e.Result))
+            {
+                allowclose = true; this.Close();
+            }
+        }
     }
 }
