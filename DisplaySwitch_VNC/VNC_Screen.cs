@@ -50,7 +50,16 @@ namespace DisplaySwitch_VNC
         /// <returns>The matching VNC_Screen object</returns>
         public static VNC_Screen GetScreenByDeviceName(string screenname)
         {
-            return EnumerateScreens().Find(x => x.DeviceName == screenname);
+            if (EnumerateScreens().Find(x => x.DeviceName == screenname) == null)
+            {
+                VNC_Screen _screen = GetPrimaryScreen();
+                RegistryManagement.SetRegistryValue("DisplayDevice", _screen.DeviceName);
+                return _screen;
+            }
+            else
+            {
+                return EnumerateScreens().Find(x => x.DeviceName == screenname);
+            }
         }
 
         /// <summary>

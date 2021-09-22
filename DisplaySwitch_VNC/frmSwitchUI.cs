@@ -138,7 +138,13 @@ namespace DisplaySwitch_VNC
                 if (RegistryManagement.GetRegistryValue("SessionChange") == "SessionLogon" || RegistryManagement.GetRegistryValue("SessionChange") == "SessionUnlock")
                 {
                     //Check if the selected value is different to the set value
-                    if (cmbDisplaySelector.SelectedValue.ToString() != RegistryManagement.GetRegistryValue("DisplayDevice"))
+                    if (cmbDisplaySelector.SelectedValue == null)
+                    {
+                        //Set the combobox value to match the displayed screen from Registry
+                        if (RegistryManagement.GetRegistryValue("DisplayDevice") != "") { cmbDisplaySelector.SelectedIndex = VNC_Screen.EnumerateScreens().FindIndex(x => x.DeviceName == RegistryManagement.GetRegistryValue("DisplayDevice")); }
+                        else { cmbDisplaySelector.SelectedIndex = 0; }
+                    }
+                    else if (cmbDisplaySelector.SelectedValue.ToString() != RegistryManagement.GetRegistryValue("DisplayDevice"))
                     {
                         //Set the combobox value to match the displayed screen from Registry
                         if (RegistryManagement.GetRegistryValue("DisplayDevice") != "") { cmbDisplaySelector.SelectedIndex = VNC_Screen.EnumerateScreens().FindIndex(x => x.DeviceName == RegistryManagement.GetRegistryValue("DisplayDevice")); }
