@@ -43,7 +43,7 @@
             this.serviceInstaller.DisplayName = "VNC Server DisplaySwitch";
             this.serviceInstaller.ServiceName = "VNC Server DisplaySwitch";
             this.serviceInstaller.ServicesDependedOn = new string[] {
-        "VNC Server"};
+        "vncserver"};
             this.serviceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             this.serviceInstaller.AfterInstall += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller_AfterInstall);
             this.serviceInstaller.Committing += new System.Configuration.Install.InstallEventHandler(this.serviceInstaller_Committing);
