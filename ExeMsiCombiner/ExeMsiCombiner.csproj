@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExeMsiCombiner</RootNamespace>
     <AssemblyName>ExeMsiCombiner</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ManifestCertificateThumbprint>C3DCFEB6BBD8F7E4C1604ED91D9FB1D2B4679852</ManifestCertificateThumbprint>
     <ManifestKeyFile>ExeMsiCombiner_TemporaryKey.pfx</ManifestKeyFile>
