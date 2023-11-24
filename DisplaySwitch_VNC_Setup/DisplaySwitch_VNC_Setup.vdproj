@@ -808,7 +808,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_642C93A4D0B14FA5A6E902D7380725A5"
             {
-            "SourcePath" = "8:..\\DisplaySwitch_Service_VNC\\obj\\Debug\\DisplaySwitch_Service.exe"
+            "SourcePath" = "8:..\\DisplaySwitch_Service_VNC\\obj\\Release\\DisplaySwitch_Service.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4618064CA3F445088815D2CA8E5AD8EE"
@@ -836,7 +836,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_D914D63FD69945949D24292A7B379A87"
             {
-            "SourcePath" = "8:..\\DisplaySwitch_VNC\\obj\\Debug\\DisplaySwitch.exe"
+            "SourcePath" = "8:..\\DisplaySwitch_VNC\\obj\\Release\\DisplaySwitch.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_4618064CA3F445088815D2CA8E5AD8EE"
